@@ -1,0 +1,149 @@
+Classes: 
+plane, ship, storage tank, baseball diamond, tennis court, basketball court, ground track field, 
+harbor, bridge, large vehicle, small vehicle, helicopter, roundabout, soccer ball field and swimming pool.
+_________________________________________________
+Create venv on server:
+export LC_ALL="en_US.UTF-8"
+export LC_CTYPE="en_US.UTF-8"
+virtualenv -p python3 venv
+_________________________________________________
+Working with CUDA:
+nvidia-smi
+export CUDA_VISIBLE_DEVICES=«0»
+_________________________________________________
+Train:
+python train.py --backbone resnet50 --epochs 30 --snapshot-path /disk1/Mir/snap csv /disk1/Mir/labels.txt /disk1/Mir/map.csv
+_________________________________________________
+Evaluate:
+python evaluate.py --gpu 3 --save-path /disk1/Mir/res csv /disk1/Mir/annotation.txt /disk1/Mir/map.csv /disk1/Mir/snap/resnet50_csv_30.h5
+_________________________________________________
+Convert model:
+python convert_model.py snap/resnet50_csv_00.h5 snap/resnet50_csv_000.h5
+_________________________________________________
+Train dataset DOTA:
+5 epoch:
+30207 instances of class ship with average precision: 0.5260
+8001 instances of class plane with average precision: 0.9132
+5229 instances of class storage-tank with average precision: 0.4392
+401 instances of class baseball-diamond with average precision: 0.7850
+2323 instances of class tennis-court with average precision: 0.9065
+518 instances of class basketball-court with average precision: 0.5437
+248 instances of class ground-track-field with average precision: 0.5537
+2121 instances of class bridge with average precision: 0.3709
+17701 instances of class large-vehicle with average precision: 0.6198
+27805 instances of class small-vehicle with average precision: 0.5804
+695 instances of class helicopter with average precision: 0.4411
+431 instances of class roundabout with average precision: 0.7205
+226 instances of class soccer-ball-field with average precision: 0.2624
+1867 instances of class swimming-pool with average precision: 0.7995
+mAP: 0.6094
+
+10 epoch:
+5670 instances of class harbor with average precision: 0.7846
+30207 instances of class ship with average precision: 0.5697
+8001 instances of class plane with average precision: 0.9243
+5229 instances of class storage-tank with average precision: 0.4889
+401 instances of class baseball-diamond with average precision: 0.9535
+2323 instances of class tennis-court with average precision: 0.9504
+518 instances of class basketball-court with average precision: 0.8324
+248 instances of class ground-track-field with average precision: 0.8486
+2121 instances of class bridge with average precision: 0.4634
+17701 instances of class large-vehicle with average precision: 0.7162
+27805 instances of class small-vehicle with average precision: 0.6002
+695 instances of class helicopter with average precision: 0.6855
+431 instances of class roundabout with average precision: 0.8274
+226 instances of class soccer-ball-field with average precision: 0.5652
+1867 instances of class swimming-pool with average precision: 0.8672
+mAP: 0.7385
+
+15 epoch:
+5670 instances of class harbor with average precision: 0.8248
+30207 instances of class ship with average precision: 0.5915
+8001 instances of class plane with average precision: 0.9381
+5229 instances of class storage-tank with average precision: 0.4880
+401 instances of class baseball-diamond with average precision: 0.9762
+2323 instances of class tennis-court with average precision: 0.9692
+518 instances of class basketball-court with average precision: 0.9015
+248 instances of class ground-track-field with average precision: 0.9113
+2121 instances of class bridge with average precision: 0.5030
+17701 instances of class large-vehicle with average precision: 0.7336
+27805 instances of class small-vehicle with average precision: 0.6408
+695 instances of class helicopter with average precision: 0.8805
+431 instances of class roundabout with average precision: 0.8518
+226 instances of class soccer-ball-field with average precision: 0.7037
+1867 instances of class swimming-pool with average precision: 0.8992
+mAP: 0.7875
+
+20 epoch:
+5670 instances of class harbor with average precision: 0.8457
+30207 instances of class ship with average precision: 0.6238
+8001 instances of class plane with average precision: 0.9441
+5229 instances of class storage-tank with average precision: 0.4949
+401 instances of class baseball-diamond with average precision: 0.9897
+2323 instances of class tennis-court with average precision: 0.9738
+518 instances of class basketball-court with average precision: 0.9477
+248 instances of class ground-track-field with average precision: 0.9305
+2121 instances of class bridge with average precision: 0.5098
+17701 instances of class large-vehicle with average precision: 0.7585
+27805 instances of class small-vehicle with average precision: 0.6652
+695 instances of class helicopter with average precision: 0.9223
+431 instances of class roundabout with average precision: 0.8743
+226 instances of class soccer-ball-field with average precision: 0.7691
+1867 instances of class swimming-pool with average precision: 0.9212
+mAP: 0.8114
+
+25 epoch:
+5670 instances of class harbor with average precision: 0.8709
+30207 instances of class ship with average precision: 0.6311
+8001 instances of class plane with average precision: 0.9461
+5229 instances of class storage-tank with average precision: 0.4952
+401 instances of class baseball-diamond with average precision: 0.9919
+2323 instances of class tennis-court with average precision: 0.9754
+518 instances of class basketball-court with average precision: 0.9570
+248 instances of class ground-track-field with average precision: 0.9468
+2121 instances of class bridge with average precision: 0.5375
+17701 instances of class large-vehicle with average precision: 0.7889
+27805 instances of class small-vehicle with average precision: 0.6850
+695 instances of class helicopter with average precision: 0.9335
+431 instances of class roundabout with average precision: 0.8877
+226 instances of class soccer-ball-field with average precision: 0.7794
+1867 instances of class swimming-pool with average precision: 0.9270
+mAP: 0.8236
+
+30 epoch:
+5670 instances of class harbor with average precision: 0.8773
+30207 instances of class ship with average precision: 0.6337
+8001 instances of class plane with average precision: 0.9501
+5229 instances of class storage-tank with average precision: 0.4933
+401 instances of class baseball-diamond with average precision: 0.9939
+2323 instances of class tennis-court with average precision: 0.9807
+518 instances of class basketball-court with average precision: 0.9697
+248 instances of class ground-track-field with average precision: 0.9546
+2121 instances of class bridge with average precision: 0.5324
+17701 instances of class large-vehicle with average precision: 0.7878
+27805 instances of class small-vehicle with average precision: 0.6918
+695 instances of class helicopter with average precision: 0.9362
+431 instances of class roundabout with average precision: 0.8799
+226 instances of class soccer-ball-field with average precision: 0.7864
+1867 instances of class swimming-pool with average precision: 0.9292
+mAP: 0.8265
+_________________________________________________
+Val dataset DOTA:
+2013 instances of class harbor with average precision: 0.6818
+9881 instances of class ship with average precision: 0.5758
+2466 instances of class plane with average precision: 0.8018
+2622 instances of class storage-tank with average precision: 0.4358
+199 instances of class baseball-diamond with average precision: 0.6601
+744 instances of class tennis-court with average precision: 0.8938
+134 instances of class basketball-court with average precision: 0.4813
+123 instances of class ground-track-field with average precision: 0.4451
+491 instances of class bridge with average precision: 0.2553
+4541 instances of class large-vehicle with average precision: 0.6457
+5667 instances of class small-vehicle with average precision: 0.4102
+70 instances of class helicopter with average precision: 0.4367
+191 instances of class roundabout with average precision: 0.5256
+122 instances of class soccer-ball-field with average precision: 0.3695
+406 instances of class swimming-pool with average precision: 0.4237
+mAP: 0.5362
+_________________________________________________
+
